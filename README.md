@@ -9,7 +9,7 @@ The previous benchmarks do not provide occlusion labels for the joints in images
 
 In particular, thirteen human models of different clothes are put into nine different scenes such as living rooms, bedrooms and offices. The human models are driven by the poses selected from the CMU Motion Capture database. We purposely use objects such as sofas and desks to occlude some body joints. Eight cameras are placed in each scene to render the multiview images and the depth maps. We provide the 3D locations of 15 joints as ground truth. 
 
-The occlusion label for each joint in an image is obtained by comparing its depth value (available in the depth map), to the depth of the 3D joint in the camera coordinate system. If the difference between the two depth values is smaller than $30$cm, then the joint is not occluded. Otherwise, it is occluded.  The table below compares this dataset to the existing benchmarks. In particular, about $20\%$ of the body joints are occluded in our dataset. 
+The occlusion label for each joint in an image is obtained by comparing its depth value (available in the depth map), to the depth of the 3D joint in the camera coordinate system. If the difference between the two depth values is smaller than 30cm, then the joint is not occluded. Otherwise, it is occluded.  The table below compares this dataset to the existing benchmarks. In particular, about 20% of the body joints are occluded in our dataset. 
 
 | Dataset          | Frames | Cameras | Occluded Joints |
 |------------------|:------:|:-------:|:---------------:|
