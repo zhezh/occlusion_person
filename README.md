@@ -53,5 +53,30 @@ unrealcv
 
 All done.
 
+## Data Description
+
+An annotation (`.pkl`) contains a list of items. Each item is associated with an image by the `"image"` attribute.
+
+We list all the attribute below, and describe their meanings.
+- `image`: str, e.g. `a05_sa01_s14_sce00/00_000000.jpg` | the path to the associated image file
+- `joints_2d`: ndarray (15,2) | 2D ground-truth joint location (x, y) in image frame
+- `joints_3d`: ndarray (15,3) | 3D ground-truth joint location (x, y, z) in **camera** frame
+-  `joints_gt`: ndarray (15,3) | 3D ground-truth joint location (x, y, z) in **global** frame
+- `joints_vis`: ndarray (15,1) | indicating if the joint is within the image range
+- `joints_vis_2d`: ndarray (15,1) | indicating if the joint is within the image range and not occluded
+- `center`: (2,) | ground-truth bounding box center in image frame
+- `scale`: (2,) | ground-truth bounding box size in image frame (multiply the number with 200)
+- `box`: (4,) | ground-truth bounding box (top-left and bottom right coordinates, can also be infer from `center` and `scale`)
+- `video_id`: str, e.g. `a05_sa01_s14_sce00`
+- `image_id`: int | `video_id` and `image_id` can be used to differentiate frames
+- `subject`: int
+- `action`: int
+- `subaction`: int
+- `camera_id`: int | 0-7 in this dataset
+- `camera`: dict | camera extrinsic and intrinsic parameters, note that the `T` definition is different. For detailed information please refer to our release code (TODO)
+- `source`: str | will be same across a dataset
+
+
+
 ## Citation
 Our work is under review, we will add it later.
