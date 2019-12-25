@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 import logging
-import wget
+import wget  # pip install python3-wget
 import hashlib
 
 
