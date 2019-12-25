@@ -52,3 +52,8 @@ for i in range(1, 54):
 
 # extract file
 os.system('7z x data/occlusion_person.zip.001')
+checksum = get_md5('images.zip')
+if not checksum == 'abff95cad80bf02ab335e711855399a6':
+    logging.info('Seems images.zip corrupted ...')
+else:
+    logging.info('All done for images.zip')
