@@ -26,6 +26,10 @@ Fig 2 Some typical images, ground-truth 2D joint locations and the depth maps. T
 
 ## Download & Extract
 
+### Manually download `images.zip`
+
+(We now provide a script to automatically download the data. Please see [Next Sec](#auto). This section can be skipped.)
+
 Please manually download from [OneDrive](https://dllabml-my.sharepoint.com/:f:/g/personal/research_dllabml_onmicrosoft_com/Et_em__avxZBp6DBz3u7uNkBzxazl7QpfzJ0w3JRhWkL4A) to a folder, e.g. `./data`, for now. (We are working on writing a script to automatically fetch the data). We split it into 53 parts due to per file size limit of OneDrive. Each part is about 1GB.
 
 After all parts are fully downloaded, you should have files like this:
@@ -40,7 +44,15 @@ You can run `find ./data -type f | xargs md5sum > downloaded_checksum.txt` to ge
 
 Then, extract the `images.zip` by `7z x ./data/occlusion_person.zip.001`. You should have `images.zip` in current directory.
 
-We also provide the train/val annotation files used in our experiments at [OneDrive/annot](https://dllabml-my.sharepoint.com/:f:/g/personal/research_dllabml_onmicrosoft_com/Esvv1AneSPxLogt4oVRU6XkBCXpynjlcJTfFsNEEgdv3LQ?e=dlODDF). 
+### Automatically download `images.zip`
+<span id="auto"> Please </span> run the script using python 3:
+```
+pip install python3-wget
+python download.py
+```
+
+### Download annotations
+We also provide the train/val annotation files used in our experiments at [OneDrive/annot](https://dllabml-my.sharepoint.com/:f:/g/personal/research_dllabml_onmicrosoft_com/Esvv1AneSPxLogt4oVRU6XkBCXpynjlcJTfFsNEEgdv3LQ?e=dlODDF).
 
 Finally, organize the images and annotations into below structure:
 ```
