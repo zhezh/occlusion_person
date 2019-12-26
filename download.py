@@ -8,13 +8,14 @@ import hashlib
 logging.basicConfig(level=logging.INFO)
 
 
-def get_md5(out_path):
+def get_md5(path):
     md5sum = hashlib.md5()
-    with open(out_path, 'rb') as f:
+    with open(path, 'rb') as f:
         for chunk in iter(lambda: f.read(4096), b""):
             md5sum.update(chunk)
     checksum = md5sum.hexdigest()
     return checksum
+
 
 # http://occlusionperson.zhzh.ml:5288/occlusion_person
 base_url = 'http://occlusionperson.zhzh.ml:5288/occlusion_person/occlusion_person.zip.'
@@ -45,6 +46,7 @@ for i in range(1, 54):
                 logging.info('{} exists and checksum is correct'.format(out_path))
                 break  # to next file
             else:
+                logging.info('{} corrupted, removing it ...'.format(out_path))
                 os.remove(out_path)  # remove corrupted file
 
         logging.info('downloading the {}-th file to {}'.format(i, out_path))
