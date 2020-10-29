@@ -1,6 +1,9 @@
 # Occlusion-Person Dataset
 
 ## Overview
+
+This dataset is part our work  *AdaFuse*: Adaptive Multiview Fusion for Accurate Human Pose Estimation in the Wild which is published on IJCV. The paper is available at [(arXiv:2010.13302)](https://arxiv.org/abs/2010.13302).
+
 ![humans](src/humans.jpg)
 
 Fig 1 Human models we used in *Occlusion-Person*
@@ -91,4 +94,15 @@ We list all the attributes below, and describe their meanings.
 
 
 ## Citation
-Our work is under review, we will add it later.
+If you use this dataset, please consider citing our work.
+```
+@article{zhang2020adafuse,
+      title={AdaFuse: Adaptive Multiview Fusion for Accurate Human Pose Estimation in the Wild}, 
+      author={Zhe Zhang and Chunyu Wang and Weichao Qiu and Wenhu Qin and Wenjun Zeng},
+      year={2020},
+      journal={IJCV},
+      publisher={Springer},
+      pages={1--16},
+}
+```
+
